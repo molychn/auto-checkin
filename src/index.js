@@ -1,14 +1,16 @@
 const request = require('request');
 const argv = process.argv;
-console.log('argv: ', argv);
-// const args = argv.slice(2);
+const args = argv.slice(2);
 
-// console.log(args);
-// request(args[0], {
-//   method: 'POST',
-//   headers: {
-//     cookie: `sessionid=${args[1]}`
-//   }
-// }, (err, res, body) => {
-//   console.log(body);
-// })
+console.log(args);
+
+const url = 'https://api.juejin.cn/growth_api/v1/check_in'
+const reqUrl = `${url}?aid${args[0]}&uuid=${args[1]}&spider=${args[2]}&_signature=${args[3]}`
+request(reqUrl, {
+  method: 'POST',
+  headers: {
+    cookie: `sessionid=${args[4]}`
+  }
+}, (err, res, body) => {
+  console.log(body);
+})
