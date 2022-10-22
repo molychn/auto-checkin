@@ -25,6 +25,6 @@ jobs:
           node-version: 16.x
         
       - name: Auto CheckIn
-        uses: |
+        run: |
           npm i
           node src/index.js {{secret.JJ_URL}} {{secret.SESSION_ID}}
