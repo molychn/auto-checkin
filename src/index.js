@@ -1,8 +1,9 @@
 const request = require('request');
 const argv = process.argv;
-const args = argv.slice(2);
+console.log('argv: ', argv);
+// const args = argv.slice(2);
 
-console.log(args);
+// console.log(args);
 // request(args[0], {
 //   method: 'POST',
 //   headers: {
