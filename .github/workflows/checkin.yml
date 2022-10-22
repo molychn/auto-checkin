@@ -32,4 +32,4 @@ jobs:
       - name: Auto CheckIn
         run: |
           npm i
-          node src/index.js ${{secrets.SESSION_ID}} ${{secrets.SESSION_ID}}
+          node src/index.js ${{secrets.JJ_URL}} ${{secrets.SESSION_ID}}
