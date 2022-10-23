@@ -11,4 +11,18 @@ request(reqUrl, {
   }
 }, (err, res, body) => {
   console.log(body);
+  checkInRet(body);
 })
+
+const checkInRet = (msg) => {
+  request('http://www.pushplus.plus/send', {
+    method: 'POST',
+    json: true,
+    body: {
+      token: args[5],
+      content: msg
+    }
+  }, (err, res, body) => {
+    console.log(body);
+  })
+}
