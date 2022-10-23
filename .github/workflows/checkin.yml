@@ -28,4 +28,4 @@ jobs:
       - name: Auto CheckIn
         run: |
           npm i
-          node src/index.js ${{secrets.AID}} ${{secrets.UUID}} ${{secrets.SPIDER}} ${{secrets.SIGNATURE}} ${{secrets.SESSION_ID}} ${{srcrets.PUSH_SESSION_TOKEN}}
+          node src/index.js ${{secrets.AID}} ${{secrets.UUID}} ${{secrets.SPIDER}} ${{secrets.SIGNATURE}} ${{secrets.SESSION_ID}} ${{secrets.PUSH_SESSION_TOKEN}}
