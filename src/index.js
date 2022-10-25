@@ -12,17 +12,24 @@ request(checkInUrl, {
 }, (err, res, body) => {
   console.log(body);
   checkInRet(body);
+  if (body.err_msg === 'success') {
+    // 签到成功后再去抽免费次数
+    drawReq()
+  }
 })
 const drawUrl = `https://api.juejin.cn/growth_api/v1/lottery/draw?aid${args[0]}&uuid=${args[1]}&spider=${args[2]}&_signature=${args[3]}`;
-request(drawUrl, {
-  method: 'POST',
-  headers: {
-    cookie: `sessionid=${args[4]}`
-  }
-}, (err, res, body) => {
-  console.log(body);
-  checkInRet(body);
-})
+const drawReq = () => {
+  request(drawUrl, {
+    method: 'POST',
+    headers: {
+      cookie: `sessionid=${args[4]}`
+    }
+  }, (err, res, body) => {
+    console.log(body);
+    checkInRet(body);
+  })
+}
+
 
 const checkInRet = (msg) => {
   request('http://www.pushplus.plus/send', {
