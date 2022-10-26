@@ -12,10 +12,8 @@ request(checkInUrl, {
 }, (err, res, body) => {
   console.log(body);
   checkInRet(body);
-  if (body.err_msg === 'success') {
-    // 签到成功后再去抽免费次数
-    drawReq()
-  }
+  // 签到成功触发后再去抽奖
+  drawReq()
 })
 const drawUrl = `https://api.juejin.cn/growth_api/v1/lottery/draw?aid${args[0]}&uuid=${args[1]}&spider=${args[2]}&_signature=${args[3]}`;
 const drawReq = () => {
