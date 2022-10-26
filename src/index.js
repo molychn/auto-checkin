@@ -35,7 +35,8 @@ const checkInRet = (msg) => {
     json: true,
     body: {
       token: args[5],
-      content: msg
+      content: msg,
+      template: 'json'
     }
   }, (err, res, body) => {
     console.log(body);
