@@ -29,3 +29,6 @@ jobs:
         run: |
           npm i
           node src/index.js ${{secrets.AID}} ${{secrets.UUID}} ${{secrets.SPIDER}} ${{secrets.SIGNATURE}} ${{secrets.SESSION_ID}} ${{secrets.PUSH_SESSION_TOKEN}}
+          
+      - name: Keepalive Workflow
+        uses: gautamkrishnar/keepalive-workflow@1.1.0
