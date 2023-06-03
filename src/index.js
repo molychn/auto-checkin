@@ -3,7 +3,7 @@ const argv = process.argv;
 const args = argv.slice(2);
 
 const url = 'https://api.juejin.cn/growth_api/v1/check_in';
-const checkInUrl = `${url}?aid${args[0]}&uuid=${args[1]}&spider=${args[2]}&_signature=${args[3]}`;
+const checkInUrl = `${url}?aid=${args[0]}&uuid=${args[1]}&spider=${args[2]}&_signature=${args[3]}`;
 request(checkInUrl, {
   method: 'POST',
   headers: {
@@ -15,7 +15,7 @@ request(checkInUrl, {
   // 签到成功触发后再去抽奖
   drawReq()
 })
-const drawUrl = `https://api.juejin.cn/growth_api/v1/lottery/draw?aid${args[0]}&uuid=${args[1]}&spider=${args[2]}&_signature=${args[3]}`;
+const drawUrl = `https://api.juejin.cn/growth_api/v1/lottery/draw?aid=${args[0]}&uuid=${args[1]}&spider=${args[2]}&_signature=${args[3]}`;
 const drawReq = () => {
   request(drawUrl, {
     method: 'POST',
